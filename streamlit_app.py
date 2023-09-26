@@ -85,7 +85,6 @@ df_selection=df.query(
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
 #st.dataframe(df_selection[showData],use_container_width=True)
 
-
 # Define a color gradient function based on the values
 def get_color(val):
     # Choose the color range based on the values
@@ -97,8 +96,8 @@ def get_color(val):
 # Apply the color gradient to the respective columns
 styled_df = df.style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business'])
 
-# Display the styled DataFrame
-st.write(styled_df, unsafe_allow_html=True)
+# Display the styled DataFrame to fill the entire section
+st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
 
 
 
