@@ -85,8 +85,7 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-st.subheader('Who is your stakeholder?')
-showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","IT","Business"])
+
 
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
 #st.dataframe(df_selection[showData],use_container_width=True)
@@ -105,9 +104,11 @@ styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst
 # Display the styled DataFrame to fill the entire section
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
 
+st.subheader('Who is your stakeholder?')
+showData=st.multiselect('Filter: ',styled_df.columns,default=["Analyst","IT","Business"])
 
 def Home():
-    with st.expander("Pains", expanded=True):
+    with st.expander("", expanded=True):
         st.dataframe(styled_df[showData], use_container_width=True, height=900)
 Home()
 
