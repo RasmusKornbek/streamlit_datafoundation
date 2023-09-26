@@ -98,7 +98,7 @@ df_selection=df_subset.query(
 )
 
 
-df_selected = df_selection[['Category','Question',option]]
+df_selected = df_selection[["Category","Question",option]]
 #st.dataframe(df_selected)    
 
 
