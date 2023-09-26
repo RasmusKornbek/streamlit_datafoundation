@@ -80,8 +80,8 @@ df_selection=df.query(
 
 
 
-        showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
-        st.dataframe(df_selection[showData],use_container_width=True)
+showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
+st.dataframe(df_selection[showData],use_container_width=True)
 
 
 
