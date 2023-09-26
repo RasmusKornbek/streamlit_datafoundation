@@ -86,7 +86,7 @@ category=st.sidebar.multiselect(
 st.subheader('Who is your stakeholder?')
 
 option = st.radio(
-    'Who is your stakeholder?',
+    'Select stakeholder?',
     options=['Business', 'IT', 'Analyst']
 )
 
@@ -98,7 +98,7 @@ df_selection=df_subset.query(
 )
 
 
-df_selected = df_selection[[option]]
+df_selected = df_selection[option]
 #st.dataframe(df_selected)    
 
 
