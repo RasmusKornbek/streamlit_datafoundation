@@ -37,18 +37,14 @@ conn = snowflake.connector.connect(
 # SQL query
 sql_query = """
 SELECT 
-    Salary,
-    "BusinessUnit",
-    "City",
-    "Country",
-    "EEID",
-    "Ethnicity",
-    "ExitDate",
-    "FullName",
-    "Gender",
-    "HireDate",
-    "JobTitle"
-FROM ALTERYXCLOUD.dsi.streamlit_salary
+"Analyst",
+"Business",
+"Category",
+"IT",
+"Question",
+"QuestionNo"
+
+FROM ALTERYXCLOUD.dsi.CategoryRatings
 """
 
 # Execute the query and fetch data into a DataFrame
@@ -56,8 +52,7 @@ cursor = conn.cursor()
 cursor.execute(sql_query)
 data = cursor.fetchall()
 df = pd.DataFrame(data, columns=[
-    'Salary', 'BusinessUnit', 'City', 'Country', 'EEID', 
-    'Ethnicity', 'ExitDate', 'FullName', 'Gender', 'HireDate', 'JobTitle'
+    'Analyst', 'Business', 'Category', 'IT', 'Question', 'QuestionNo'
 ])
 
 # Close the cursor and connection
@@ -72,33 +67,16 @@ st.sidebar.image("logo1.png",caption="Developed and Maintaned by: Rasmus: +45287
 
 #switcher
 st.sidebar.header("Please filter")
-country=st.sidebar.multiselect(
+category=st.sidebar.multiselect(
     "Select Country",
-     options=df["Country"].unique(),
-     default=df["Country"].unique(),
-)
-city=st.sidebar.multiselect(
-    "Select City",
-     options=df["City"].unique(),
-     default=df["City"].unique(),
-)
-businessunit=st.sidebar.multiselect(
-    "Select Business Unit",
-     options=df["BusinessUnit"].unique(),
-     default=df["BusinessUnit"].unique(),
+     options=df["Category"].unique(),
+     default=df["Category"].unique(),
 )
 
 
 df_selection=df.query(
-    "Country==@country & City==@city & BusinessUnit==@businessunit"
+    "Category==@category"
 )
-
-def Home():
-    with st.expander("My Data"):
-        showData=st.multiselect('Filter: ',df_selection.columns,default=["Salary","BusinessUnit","City","Country","EEID","Ethnicity","ExitDate","FullName","Gender","HireDate","JobTitle"])
-        st.dataframe(df_selection[showData],use_container_width=True)
-
-Home()
 
 
 
