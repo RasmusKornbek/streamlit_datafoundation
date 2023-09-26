@@ -131,7 +131,7 @@ def get_color(val):
     return f'background-color: rgb(0, {int(255 - normalized_val * 255)}, 0)'
 
 # Apply the color gradient to the respective columns
-styled_df = df_selected2.style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business'])
+styled_df = df_selected2.style.applymap(lambda x: get_color(x), subset=[option_select])
 
 # Display the styled DataFrame to fill the entire section
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
