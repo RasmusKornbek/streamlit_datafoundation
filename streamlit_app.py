@@ -108,7 +108,6 @@ df_selection=df_subset.query(
 #st.dataframe(df_selected2)   
 
 df_selected2 = df_selection[["Category", "Question", option_select]]
-st.dataframe(df_selected2)  
 
 
 
