@@ -97,12 +97,9 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-if type(option) == type(None):
-    st.dataframe(empty)  
 
-else:
-    df_selected = df_selection[['Category','Question',option]]
-    st.dataframe(df_selected)    
+df_selected = df_selection[['Category','Question',option]]
+st.dataframe(df_selected)    
 
 
 
