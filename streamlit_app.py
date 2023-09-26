@@ -112,6 +112,9 @@ df_selection=df_subset.query(
 #st.dataframe(df_selected2)   
 
 df_selected2 = df_selection[["Category", "Question", option_select]]
+df_sorted = df.sort_values(by=[option_select])
+
+st.write(df_sorted)
 
 
 
