@@ -70,10 +70,12 @@ df_subset = pd.DataFrame(df, columns=[
 ])
 
 
-st.sidebar.header("Select stakeholder position and relevant categories")
+
 
 #side bar
 st.sidebar.image("logo1.png",caption="Developed and Maintaned by: Rasmus: +4528765537")
+st.sidebar.header("Select stakeholder position and relevant categories")
+
 
 option_select = st.sidebar.radio(
     'Select stakeholder:',
