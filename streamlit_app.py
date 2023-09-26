@@ -70,7 +70,7 @@ st.sidebar.image("logo1.png",caption="Developed and Maintaned by: Rasmus: +45287
 #switcher
 st.sidebar.header("Please filter")
 category=st.sidebar.multiselect(
-    "Select Country",
+    "Select Category",
      options=df["Category"].unique(),
      default=df["Category"].unique(),
 )
