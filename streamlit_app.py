@@ -107,7 +107,7 @@ styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst
 
 def Home():
     with st.expander("My Data", expanded=True):
-        st.dataframe(styled_df, use_container_width=True, height=800)
+        st.dataframe(styled_df, use_container_width=True, height=1000)
 Home()
 
 #st.write(styled_df, unsafe_allow_html=True, use_container_width=use_container_width)
