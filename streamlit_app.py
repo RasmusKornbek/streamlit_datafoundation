@@ -44,7 +44,7 @@ SELECT
 "Question",
 "QuestionNo"
 
-FROM Streamlit.dsi.CategoryRatings
+FROM STREAMLIT.DSI.CategoryRatings
 """
 
 # Execute the query and fetch data into a DataFrame
