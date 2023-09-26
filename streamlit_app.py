@@ -98,15 +98,15 @@ df_selection=df_subset.query(
 )
 
 
-df_selected = df_selection[['Category','Question',option]]
-st.dataframe(df_selected)    
+#df_selected = df_selection[['Category','Question',option]]
+#st.dataframe(df_selected)    
 
 
 option=st.selectbox('', 
-             options=['none','yo'])
+             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
 
-df_selected = df_selection[['Category','Question',option]]
-st.dataframe(df_selected)   
+df_selected1 = df_selection[['Category','Question',option]]
+st.dataframe(df_selected1)   
 
 
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
