@@ -87,8 +87,7 @@ st.subheader('Who is your stakeholder?')
 
 option = st.radio(
     'Who is your stakeholder?',
-    options=['Business', 'IT', 'Analyst'],
-    index=None
+    options=['Business', 'IT', 'Analyst']
 )
 
 st.write('You selected:', option)
