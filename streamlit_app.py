@@ -97,7 +97,7 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-if type(option) in (type(None)):
+if type(option) == type(None):
     st.dataframe(empty)  
 
 else:
