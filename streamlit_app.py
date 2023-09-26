@@ -101,7 +101,7 @@ df_selection=df_subset.query(
 df_selected = df_selection[option]
 st.dataframe(df_selected)    
 
-df_selected2 = df_selection["Categories"]
+df_selected2 = df_selection["Category"]
 st.dataframe(df_selected2)   
 
 
