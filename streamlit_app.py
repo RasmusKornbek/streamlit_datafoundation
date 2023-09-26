@@ -98,15 +98,15 @@ df_selection=df_subset.query(
 )
 
 
-#df_selected = df_selection[['Category','Question',option]]
+df_selected = df_selection[['Category','Question',option]]
 #st.dataframe(df_selected)    
 
 
-option=st.selectbox('', 
-             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
+#option=st.selectbox('', 
+#             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
 
-df_selected1 = df_selection[['Category','Question',option]]
-st.dataframe(df_selected1)   
+#df_selected1 = df_selection[['Category','Question',option]]
+#st.dataframe(df_selected1)   
 
 
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
@@ -121,7 +121,7 @@ def get_color(val):
     return f'background-color: rgb(0, {int(255 - normalized_val * 255)}, 0)'
 
 # Apply the color gradient to the respective columns
-styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business'])
+styled_df = df_selected.style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business'])
 
 # Display the styled DataFrame to fill the entire section
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
