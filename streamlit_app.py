@@ -80,7 +80,12 @@ df_selection=df.query(
 
 
 
+def Home():
+    with st.expander("My Data"):
+        showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","City","Category","IT","Question","QuestionNo"])
+        st.dataframe(df_selection[showData],use_container_width=True)
 
+Home()
 
 
 
