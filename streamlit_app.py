@@ -94,7 +94,7 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-st.dataframe(df_columns = df_selection[option])
+st.dataframe(df_selection[option])
 
 
 
