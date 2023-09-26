@@ -99,7 +99,7 @@ df_selection=df_subset.query(
 
 
 df_selected = df_selection[option]
-#st.dataframe(df_selected)    
+st.dataframe(df_selected)    
 
 
 #option=st.selectbox('', 
