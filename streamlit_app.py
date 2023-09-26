@@ -84,6 +84,19 @@ showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Busi
 st.dataframe(df_selection[showData],use_container_width=True)
 
 
+# Define a color gradient function based on the values
+def get_color(val):
+    # Choose the color range based on the values
+    max_val = max(df['Analyst'].max(), df['IT'].max(), df['Business'].max())
+    min_val = min(df['Analyst'].min(), df['IT'].min(), df['Business'].min())
+    normalized_val = (val - min_val) / (max_val - min_val)
+    return f'background-color: rgb(0, {int(255 - normalized_val * 255)}, 0)'
+
+# Apply the color gradient to the respective columns
+styled_df = df.style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business'])
+
+# Display the styled DataFrame
+st.write(styled_df, unsafe_allow_html=True)
 
 
 
