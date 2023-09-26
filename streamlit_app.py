@@ -85,7 +85,7 @@ category=st.sidebar.multiselect(
 
 st.subheader('Who is your stakeholder?')
 
-option_select = st.radio(
+option_select = st.sidebar.radio(
     'Select stakeholder?',
     options=['Business', 'IT', 'Analyst']
 )
