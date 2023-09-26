@@ -37,12 +37,12 @@ conn = snowflake.connector.connect(
 # SQL query
 sql_query = """
 SELECT 
-"Analyst",
-"Business",
-"Category",
+"ANALYST",
+"BUSINESS",
+"CATEGORY",
 "IT",
-"Question",
-"QuestionNo"
+"QUESTION",
+"QUESTIONNO"
 
 FROM STREAMLIT.DSI.CATEGORYRATINGS
 """
