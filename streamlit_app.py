@@ -60,7 +60,12 @@ df = pd.DataFrame(data, columns=[
 # Close the cursor and connection
 cursor.close()
 conn.close()
- 
+
+
+# Select relevant subset
+df_subset = pd.DataFrame(df, columns=[
+    'Category', 'Question', 'Analyst', 'Business', 'IT'
+])
 
 
 #side bar
@@ -71,12 +76,12 @@ st.sidebar.image("logo1.png",caption="Developed and Maintaned by: Rasmus: +45287
 st.sidebar.header("Please filter")
 category=st.sidebar.multiselect(
     "Select Category",
-     options=df["Category"].unique(),
-     default=df["Category"].unique(),
+     options=df_subset["Category"].unique(),
+     default=df_subset["Category"].unique(),
 )
 
 
-df_selection=df.query(
+df_selection=df_subset.query(
     "Category==@category"
 )
 
