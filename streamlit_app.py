@@ -98,14 +98,14 @@ df_selection=df_subset.query(
 )
 
 
-df_selected = df_selection[option_select]
-st.dataframe(df_selected)    
+#df_selected = df_selection[option_select]
+#st.dataframe(df_selected)    
 
-df_selected2 = df_selection["Category"]
-st.dataframe(df_selected2)   
+#df_selected2 = df_selection["Category"]
+#st.dataframe(df_selected2)   
 
-df_selected2 = df_selection[["Category", "Question"]]
-st.dataframe(df_selected2)   
+#df_selected2 = df_selection[["Category", "Question"]]
+#st.dataframe(df_selected2)   
 
 df_selected2 = df_selection[["Category", "Question", option_select]]
 st.dataframe(df_selected2)  
