@@ -73,6 +73,11 @@ df_subset = pd.DataFrame(df, columns=[
 #side bar
 st.sidebar.image("logo1.png",caption="Developed and Maintaned by: Rasmus: +4528765537")
 
+option_select = st.sidebar.radio(
+    'Select stakeholder:',
+    options=['Business', 'IT', 'Analyst']
+)
+
 
 #switcher
 st.sidebar.header("Please filter")
@@ -83,12 +88,7 @@ category=st.sidebar.multiselect(
 )
 
 
-st.subheader('Who is your stakeholder?')
 
-option_select = st.sidebar.radio(
-    'Select stakeholder?',
-    options=['Business', 'IT', 'Analyst']
-)
 
 st.write('You selected:', option_select)
 
