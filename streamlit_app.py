@@ -81,7 +81,16 @@ category=st.sidebar.multiselect(
 )
 
 
-df_selection=df_subset.query(
+st.subheader('Who is your stakeholder?')
+
+option = st.selectbox(
+    'Who is your stakeholder?',
+    ('Business', 'IT', 'Analyst'))
+
+st.write('You selected:', option)
+
+
+df_selection=df_subset[option].query(
     "Category==@category"
 )
 
@@ -104,13 +113,7 @@ styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst
 # Display the styled DataFrame to fill the entire section
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
 
-st.subheader('Who is your stakeholder?')
 
-option = st.selectbox(
-    'Who is your stakeholder?',
-    ('Business', 'IT', 'Analyst'))
-
-st.write('You selected:', option)
 
 def Home():
     with st.expander("", expanded=True):
