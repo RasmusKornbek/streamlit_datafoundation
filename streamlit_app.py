@@ -103,7 +103,8 @@ st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
 def Home():
     with st.expander("My Data", expanded=True):
         showData=st.multiselect('Filter: ',df_selection.columns,default=["Category", "QuestionNo", "Question", "Analyst","Business","IT"])
-        st.dataframe(styled_df[showData],use_container_width=True)
+        st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
+
 Home()
 
 
