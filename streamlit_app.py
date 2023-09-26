@@ -98,12 +98,12 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-if option=='Business' or option=='IT' or option=='Analyst':
-    df_selected = df_selection[['Category','Question',option]]
-    st.dataframe(df_selected)    
+if type(option) in (str, type(None)):
+    st.dataframe(empty)  
 
 else:
-    st.dataframe(empty)
+    df_selected = df_selection[['Category','Question',option]]
+    st.dataframe(df_selected)    
 
 
 
