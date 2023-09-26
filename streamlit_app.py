@@ -84,7 +84,6 @@ option_select = st.sidebar.radio(
 
 
 #switcher
-
 category=st.sidebar.multiselect(
     "Select Category",
      options=df_subset["Category"].unique(),
@@ -94,38 +93,14 @@ category=st.sidebar.multiselect(
 
 
 
-st.write('You stakeholder is in:', option_select)
-
-
 df_selection=df_subset.query(
     "Category==@category"
 )
 
 
-#df_selected = df_selection[option_select]
-#st.dataframe(df_selected)    
+df_dynamic_columns = df_selection[["Category", "Question", option_select]]
+df_dynamic_columns_sorted = df_dynamic_columns.sort_values(by=[option_select])
 
-#df_selected2 = df_selection["Category"]
-#st.dataframe(df_selected2)   
-
-#df_selected2 = df_selection[["Category", "Question"]]
-#st.dataframe(df_selected2)   
-
-df_selected2 = df_selection[["Category", "Question", option_select]]
-df_sorted = df_selected2.sort_values(by=[option_select])
-
-
-
-
-#option=st.selectbox('', 
-#             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
-
-#df_selected1 = df_selection[['Category','Question',option]]
-#st.dataframe(df_selected1)   
-
-
-#showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
-#st.dataframe(df_selection[showData],use_container_width=True)
 
 # Define a color gradient function based on the values
 def get_color(val):
@@ -136,7 +111,7 @@ def get_color(val):
     return f'background-color: rgb(0, {int(255 - normalized_val * 255)}, 0)'
 
 # Apply the color gradient to the respective columns
-styled_df = df_sorted.style.applymap(lambda x: get_color(x), subset=[option_select])
+styled_df = df_dynamic_columns_sorted.style.applymap(lambda x: get_color(x), subset=[option_select])
 
 # Display the styled DataFrame to fill the entire section
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
