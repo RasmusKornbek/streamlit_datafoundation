@@ -85,7 +85,7 @@ st.subheader('Who is your stakeholder?')
 
 option = st.checkbox(
     'Who is your stakeholder?',
-    options['Business', 'IT', 'Analyst'])
+    options=['Business', 'IT', 'Analyst'])
 
 st.write('You selected:', option)
 
