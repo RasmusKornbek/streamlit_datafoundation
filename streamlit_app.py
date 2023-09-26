@@ -52,7 +52,7 @@ cursor = conn.cursor()
 cursor.execute(sql_query)
 data = cursor.fetchall()
 df = pd.DataFrame(data, columns=[
-    'Analyst', 'Business', 'Category', 'IT', 'Question', 'QuestionNo'
+    'QuestionNo', 'Question', 'Analyst', 'Business', 'Category', 'IT',
 ])
 
 # Close the cursor and connection
@@ -80,8 +80,8 @@ df_selection=df.query(
 
 
 
-showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
-st.dataframe(df_selection[showData],use_container_width=True)
+#showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
+#st.dataframe(df_selection[showData],use_container_width=True)
 
 
 # Define a color gradient function based on the values
