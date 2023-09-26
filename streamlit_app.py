@@ -61,6 +61,8 @@ df = pd.DataFrame(data, columns=[
 cursor.close()
 conn.close()
 
+#Create empty dataframe
+empty = pd.DataFrame()
 
 # Select relevant subset
 df_subset = pd.DataFrame(df, columns=[
@@ -96,11 +98,12 @@ df_selection=df_subset.query(
     "Category==@category"
 )
 
-st.dataframe(df_selection[option])
+if option='Business' or option='IT' or option='Analyst':
+    df_selected = df_selection[['Category','Question',option]]
+    st.dataframe(df_selected)    
 
-df_selected = df_selection[['Category','Question',option]]
-
-st.dataframe(df_selected)
+else:
+    st.dataframe(empty)
 
 
 
