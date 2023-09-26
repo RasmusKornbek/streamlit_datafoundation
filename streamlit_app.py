@@ -101,6 +101,9 @@ df_selection=df_subset.query(
 df_selected = df_selection[option]
 st.dataframe(df_selected)    
 
+df_selected2 = df_selection["Categories"]
+st.dataframe(df_selected2)   
+
 
 #option=st.selectbox('', 
 #             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
