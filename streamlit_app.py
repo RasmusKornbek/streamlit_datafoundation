@@ -86,6 +86,7 @@ df_selection=df_subset.query(
 )
 
 st.subheader('Who is your stakeholder?')
+showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","IT","Business"])
 
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
 #st.dataframe(df_selection[showData],use_container_width=True)
