@@ -104,7 +104,7 @@ st.dataframe(df_selected)
 df_selected2 = df_selection["Category"]
 st.dataframe(df_selected2)   
 
-df_selected2 = df_selection["Category", option]
+df_selected2 = df_selection[["Category", "Question]]
 st.dataframe(df_selected2)   
 
 
