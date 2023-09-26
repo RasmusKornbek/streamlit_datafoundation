@@ -107,6 +107,8 @@ st.dataframe(df_selected2)
 df_selected2 = df_selection[["Category", "Question"]]
 st.dataframe(df_selected2)   
 
+st.write(type(option))
+
 
 #option=st.selectbox('', 
 #             options=['Select Stakeholder','Analyst', 'IT', 'Business'])
