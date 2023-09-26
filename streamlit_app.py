@@ -9,7 +9,7 @@ from numerize.numerize import numerize
 import time
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
-st.subheader("Sales Questionaire - Data Foundation")
+
 st.markdown("##")
 
 theme_plotly = None # None or streamlit
@@ -114,7 +114,7 @@ styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst
 ##st.write(styled_df, unsafe_allow_html=True, use_container_width=True)
 
 
-
+st.subheader("Sales Questionaire - Data Foundation")
 def Home():
     with st.expander("", expanded=True):
         st.dataframe(styled_df, use_container_width=True, height=900)
