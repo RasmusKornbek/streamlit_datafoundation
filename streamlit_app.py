@@ -74,7 +74,7 @@ df_subset = pd.DataFrame(df, columns=[
 
 #side bar
 st.sidebar.image("DataFoundation.png",caption="Developed and Maintaned by: Rasmus: +4528765537")
-st.sidebar.header("Select stakeholder position and relevant categories")
+st.sidebar.header("Select relevant context")
 
 
 option_select = st.sidebar.radio(
