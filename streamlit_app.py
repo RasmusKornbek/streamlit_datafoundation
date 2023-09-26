@@ -109,7 +109,7 @@ showData=st.multiselect('Filter: ',styled_df.columns,default=["Analyst","IT","Bu
 
 def Home():
     with st.expander("", expanded=True):
-        st.dataframe(styled_df[showData], use_container_width=True, height=900)
+        st.dataframe(df_selection[showData].style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business']), use_container_width=True, height=900)
 Home()
 
 #st.write(styled_df, unsafe_allow_html=True, use_container_width=use_container_width)
