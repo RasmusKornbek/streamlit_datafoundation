@@ -54,7 +54,7 @@ cursor = conn.cursor()
 cursor.execute(sql_query)
 data = cursor.fetchall()
 df = pd.DataFrame(data, columns=[
-    'Category', 'Question', 'QuestionNo', 'Analyst', 'Business', 'IT'
+    'Category', 'QuestionNo', 'Question', 'Analyst', 'Business', 'IT'
 ])
 
 # Close the cursor and connection
