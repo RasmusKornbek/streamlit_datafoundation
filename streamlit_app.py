@@ -83,7 +83,7 @@ category=st.sidebar.multiselect(
 
 st.subheader('Who is your stakeholder?')
 
-option = st.selectbox(
+option = st.checkbox(
     'Who is your stakeholder?',
     ('Business', 'IT', 'Analyst'))
 
