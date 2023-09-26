@@ -90,7 +90,7 @@ option_select = st.radio(
     options=['Business', 'IT', 'Analyst']
 )
 
-st.write('You selected:', option)
+st.write('You selected:', option_select)
 
 
 df_selection=df_subset.query(
@@ -110,7 +110,6 @@ st.dataframe(df_selected2)
 df_selected2 = df_selection[["Category", "Question", option_select]]
 st.dataframe(df_selected2)  
 
-st.write(type(option_select))
 
 
 #option=st.selectbox('', 
