@@ -44,7 +44,7 @@ SELECT
 "Question",
 "QuestionNo"
 
-FROM ALTERYXCLOUD.dsi.CategoryRatings
+FROM Streamlit.dsi.CategoryRatings
 """
 
 # Execute the query and fetch data into a DataFrame
