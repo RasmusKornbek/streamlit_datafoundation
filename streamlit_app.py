@@ -90,7 +90,7 @@ option = st.selectbox(
 st.write('You selected:', option)
 
 
-df_selection=df_subset[option].query(
+df_selection=df_subset.query(
     "Category==@category"
 )
 
