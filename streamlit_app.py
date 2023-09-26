@@ -9,7 +9,7 @@ from numerize.numerize import numerize
 import time
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
-st.subheader("🔔  No PAIN No GAIN")
+st.subheader("Sales Questionaire - Data Foundation")
 st.markdown("##")
 
 theme_plotly = None # None or streamlit
