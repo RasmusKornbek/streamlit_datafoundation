@@ -96,6 +96,10 @@ df_selection=df_subset.query(
 
 st.dataframe(df_selection[option])
 
+df_selected = df_selection[Category,Question,option]
+
+st.dataframe(df_selected)
+
 
 
 #showData=st.multiselect('Filter: ',df_selection.columns,default=["Analyst","Business","Category","IT","Question","QuestionNo"])
