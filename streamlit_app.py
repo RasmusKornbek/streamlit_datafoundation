@@ -37,12 +37,14 @@ conn = snowflake.connector.connect(
 # SQL query
 sql_query = """
 SELECT 
+"CATEGORY",
+"QUESTIONNO",
+"QUESTION",
 "ANALYST",
 "BUSINESS",
-"CATEGORY",
-"IT",
-"QUESTION",
-"QUESTIONNO"
+"IT"
+
+
 
 FROM STREAMLIT.DSI.CATEGORYRATINGS
 """
@@ -52,7 +54,7 @@ cursor = conn.cursor()
 cursor.execute(sql_query)
 data = cursor.fetchall()
 df = pd.DataFrame(data, columns=[
-    'QuestionNo', 'Question', 'Analyst', 'Business', 'Category', 'IT',
+    'Category', 'QuestionNo', 'Question', 'Analyst', 'Business', 'IT'
 ])
 
 # Close the cursor and connection
