@@ -107,9 +107,15 @@ styled_df = df_selection.style.applymap(lambda x: get_color(x), subset=['Analyst
 st.subheader('Who is your stakeholder?')
 showData=st.multiselect('Filter: ',styled_df.columns,default=["Analyst","IT","Business"])
 
+option = st.selectbox(
+    'Who is your stakeholder?',
+    ('Business', 'IT', 'Analyst'))
+
+st.write('You selected:', option)
+
 def Home():
     with st.expander("", expanded=True):
-        st.dataframe(df_selection[showData].style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business']), use_container_width=True, height=900)
+        st.dataframe(df_selection[option].style.applymap(lambda x: get_color(x), subset=['Analyst', 'IT', 'Business']), use_container_width=True, height=900)
 Home()
 
 #st.write(styled_df, unsafe_allow_html=True, use_container_width=use_container_width)
